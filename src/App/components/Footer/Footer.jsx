@@ -1,8 +1,11 @@
 import React from 'react';
+import Container from '../../../shared/components/Container';
 
 const Footer = () => (
   <footer>
-    footer
+    <Container>
+      footer
+    </Container>
   </footer>
 );
 
