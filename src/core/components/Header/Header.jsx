@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../../../shared/components/Container';
+import Container from '../../../shared/basic-components/Container';
 
 const Header = () => (
   <header>

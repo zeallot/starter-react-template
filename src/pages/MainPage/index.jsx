@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { css, jsx } from '@emotion/core';
 import { Link } from 'react-router-dom';
-import { Button } from '../../shared/components/Buttons';
-import Container from '../../shared/components/Container';
+import { Button } from '../../shared/basic-components/Buttons';
+import Container from '../../shared/basic-components/Container';
 import { fetchDog } from './redux/actions';
 
 const MainPage = ({ fetchRandomDogImage, image }) => (

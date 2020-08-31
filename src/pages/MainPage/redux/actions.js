@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import api from '../../../api';
+import api from '../../../services/apiService';
 
 export const fetchDogRequest = createAction('FETCH_DOG_REQUEST');
 export const fetchDogPriceSuccess = createAction('FETCH_DOG_SUCCESS');
