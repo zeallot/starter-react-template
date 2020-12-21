@@ -1,4 +1,3 @@
-import React from 'react';
 import { Global, css } from '@emotion/core';
 import { fontFamily, fontSize } from './variables';
 
