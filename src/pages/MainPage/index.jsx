@@ -1,44 +1,23 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { css, jsx } from '@emotion/core';
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '../../shared/basic-components/Buttons';
 import Container from '../../shared/basic-components/Container';
 import { fetchDog } from './redux/actions';
 
-const MainPage = ({ fetchRandomDogImage, image }) => (
-  <Container>
-    <Link to="/">To ...</Link>
-    <img
-      css={css`
-        max-width: 200px;
-        width: 100%;
-        height: auto;
-      `}
-      src={image}
-      alt=""
-    />
-    <Button onClick={() => fetchRandomDogImage()}>Button</Button>
-  </Container>
-);
+const MainPage = () => {
+  const dispatch = useDispatch();
+  const { image } = useSelector((state) => ({
+    image: state.dog.img,
+  }));
+  const onRollDog = () => {
+    dispatch(fetchDog());
+  };
 
-MainPage.propTypes = {
-  fetchRandomDogImage: PropTypes.func.isRequired,
-  image: PropTypes.string,
+  return (
+    <Container>
+      <img src={image} alt="" />
+      <Button onClick={onRollDog}>Roll dog</Button>
+    </Container>
+  );
 };
 
-MainPage.defaultProps = {
-  image: '',
-};
-
-const stateToProps = (state) => ({
-  image: state.example.img,
-});
-
-const dispatchToProps = {
-  fetchRandomDogImage: fetchDog,
-};
-
-export default connect(stateToProps, dispatchToProps)(MainPage);
+export default MainPage;

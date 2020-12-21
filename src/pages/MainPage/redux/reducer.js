@@ -11,31 +11,31 @@ const defaultState = {
   isFetching: false,
 };
 
-const exampleReducer = handleActions(
+const defaultFetchReducer = (state) => ({
+  ...state,
+  isFetching: true,
+});
+
+const defaultSuccessReducer = (state, { payload }) => ({
+  ...state,
+  ...payload,
+  isFetching: false,
+  error: null,
+});
+
+const defaultFailureReducer = (state, { payload }) => ({
+  ...state,
+  isFetching: false,
+  error: payload,
+});
+
+const dogReducer = handleActions(
   {
-    [fetchDogRequest](state) {
-      return {
-        ...state,
-        isFetching: true,
-      };
-    },
-    [fetchDogPriceSuccess](state, { payload }) {
-      return {
-        ...state,
-        img: payload.message,
-        isFetching: false,
-        error: null,
-      };
-    },
-    [fetchDogPriceFailure](state, { payload }) {
-      return {
-        ...state,
-        isFetching: false,
-        error: payload,
-      };
-    },
+    [fetchDogRequest]: defaultFetchReducer,
+    [fetchDogPriceSuccess]: defaultSuccessReducer,
+    [fetchDogPriceFailure]: defaultFailureReducer,
   },
   defaultState,
 );
 
-export default exampleReducer;
+export default dogReducer;

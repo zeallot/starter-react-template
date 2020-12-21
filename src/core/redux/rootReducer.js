@@ -1,5 +1,5 @@
-import exampleReducer from '../../pages/MainPage/redux/reducer';
+import dogReducer from '../../pages/MainPage/redux/reducer';
 
 export default {
-  example: exampleReducer,
+  dog: dogReducer,
 };
