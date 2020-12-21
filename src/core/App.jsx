@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import configureStore from './redux/configureStore';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Main from './components/Main/Main';
+import Main from './components/Main';
 import Routes from './Routes';
 import GlobalStyles from '../shared/GlobalStyles';
 

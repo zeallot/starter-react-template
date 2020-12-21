@@ -1,7 +1,7 @@
-import exampleApi from './exampleApi';
+import dogApi from './dogApi';
 
 const api = {
-  example: exampleApi,
+  dog: dogApi,
 };
 
 export default api;

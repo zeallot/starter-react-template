@@ -8,7 +8,7 @@ export const fetchDogPriceFailure = createAction('FETCH_DOG_FAILURE');
 export const fetchDog = () => async (dispatch) => {
   try {
     dispatch(fetchDogRequest());
-    const { data } = await api.example.getRandomDogImg();
+    const { data } = await api.dog.getRandomDogImg();
     dispatch(fetchDogPriceSuccess({ img: data.message }));
   } catch (error) {
     dispatch(fetchDogPriceFailure(error));
